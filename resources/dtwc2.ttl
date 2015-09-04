@@ -1,0 +1,790 @@
+@prefix : <http://www.optet.eu/ns/DigitalTrustworthinessCertificate#> .
+@prefix a: <http://protege.stanford.edu/system#> .
+@prefix m: <http://www.google.com> .
+@prefix y: <http://www.yovisto.com/resource/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix db: <http://ex.com/owl2/families#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix eg: <urn:x-hp:eg/> .
+@prefix ex: <http://example.org/stuff/1.0/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix hr: <http://vivo.cornell.edu/ns/hr/0.9/hr.owl#> .
+@prefix kb: <http://protege.stanford.edu/kb#> .
+@prefix p1: <http://xmlns.com/foaf/0.1/> .
+@prefix po: <http://purl.org/ontology/po> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix ts: <http://www.example.org/TimeSearch#> .
+@prefix tw: <http://tw.rpi.edu/schema/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema> .
+@prefix CHD: <http://homes.esat.kuleuven.be/~bioiuser/chdwiki/data/chdwiki.owl#> .
+@prefix DUL: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix aka: <http://vivoweb.org/ontology/aka#> .
+@prefix app: <http://eagle-i.org/ont/app/1.0/> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix cce: <http://vivoweb.org/ontology/cornell-cooperative-extension#> .
+@prefix col: <http://www.loa-cnr.it/ontologies/Collectives#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dol: <http://www.loa-cnr.it/ontologies/DOLCE-Lite#> .
+@prefix dsd: <http://people.lis.illinois.edu/~ddubin/resource/example/> .
+@prefix fam: <http://a.com/ontology#> .
+@prefix far: <http://vitro.mannlib.cornell.edu/ns/reporting#> .
+@prefix fma: <http://purl.obolibrary.org/obo/fma#> .
+@prefix gad: <http://geneticassociationdb.nih.gov/cgi-bin/tableview.cgi?table=diseaseview&cond=gene=%27> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix j.0: <http://www.owl-ontologies.com/turismo.owl#> .
+@prefix j.1: <http://semanticdesktop/ontology#> .
+@prefix j.2: <http://inspire.jrc.ec.europa.eu/schemas/base/3.2/> .
+@prefix j.3: <http://www.opengis.net/ont/geosparql#> .
+@prefix lom: <http://ltsc.ieee.org/xsd/LOM/> .
+@prefix map: <http://www.w3c.rl.ac.uk/2003/11/21-skos-mapping#> .
+@prefix ns0: <http://aims.fao.org/aos/agrontology#> .
+@prefix ns1: <http://art.uniroma2.it/ontologies/vocbench#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix ope: <http://www.fitforall.gr/ope#> .
+@prefix org: <http://www.w3.org/ns/org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pla: <http://www.loa-cnr.it/ontologies/Plans#> .
+@prefix pol: <http://www.rdfabout.com/rdf/schema/politico/> .
+@prefix pvs: <http://vivoweb.org/ontology/provenance-support#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix req: <http://ns.softwiki.de/req/> .
+@prefix sce: <http://vivoweb.org/ontology/SchoolOfContinuingEducation#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix spa: <http://www.loa-cnr.it/ontologies/SpatialRelations#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix tag: <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix tem: <http://www.loa-cnr.it/ontologies/TemporalRelations#> .
+@prefix twi: <http://tw.rpi.edu/instances/> .
+@prefix vin: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#> .
+@prefix vom: <http://vocab.arvida.de/2014/03/vom/vocab#> .
+@prefix wos: <http://vivo.mannlib.cornell.edu/ns/ThomsonWOS/0.1#> .
+@prefix www: <http://www.movieontology.org/2009/11/09/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix acti: <http://vivoweb.org/ontology/activity-insight#> .
+@prefix aktp: <http://www.aktors.org/ontology/portal#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cbim: <http://www.coinsweb.nl/c-bim.owl#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix core: <http://www.bbc.co.uk/ontologies/coreconcepts/> .
+@prefix daml: <http://www.daml.org/2001/03/daml+oil#> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix edns: <http://www.loa-cnr.it/ontologies/ExtendedDnS#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix food: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#> .
+@prefix fpar: <http://www.loa-cnr.it/ontologies/FunctionalParticipation#> .
+@prefix gcis: <http://data.globalchange.gov/gcis.owl#> .
+@prefix gfvo: <http://www.biointerchange.org/gfvo#> .
+@prefix hugo: <http://www.genenames.org/data/hgnc_data.php?match=> .
+@prefix ldbc: <http://www.ldbc.eu/> .
+@prefix mann: <http://vivo.cornell.edu/ns/mannadditions/0.1#> .
+@prefix omim: <http://omim.org/entry/> .
+@prefix onto: <http://137.208.51.84:5000/owl/2014_11_03+19%3A20%3A26+nahost_spectral_brute_limit_50_crowdflower%2F3#> .
+@prefix onyx: <http://www.gsi.dit.upm.es/ontologies/onyx/ns#> .
+@prefix owl2: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix page: <http://dbpedia.org/page/> .
+@prefix pmid: <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sumo: <http://stuarthendren.net/resource/sumodlfull.owl#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swvs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix tags: <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix test: <inn/> .
+@prefix this: <http://ontovibe.visualdataweb.org/1.0#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wcmc: <http://weill.cornell.edu/vivo/ontology/wcmc#> .
+@prefix wped: <http://en.wikipedia.org/wiki/> .
+@prefix xref: <http://id.crossref.org/contributor/> .
+@prefix zfin: <http://zfin.org/action/marker/view/> .
+@prefix Fexda: <http://www.sap.com/Fexda#> .
+@prefix acfoo: <http://acme.example.com/foo> .
+@prefix being: <http://purl.org/ontomedia/ext/common/being#> .
+@prefix bench: <http://homes.esat.kuleuven.be/~bioiuser/chdwiki/index.php/CHD:CaseReport?id=> .
+@prefix bevon: <http://rdfs.co/bevon/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix foaf2: <http://xmlns.com/foaf/0.1/> .
+@prefix local: <http://vivo.cornell.edu/ontology/local#> .
+@prefix maths: <http://vocab.arvida.de/2014/03/maths/vocab#> .
+@prefix mpeg7: <http://rhizomik.net/ontologies/2005/03/Mpeg7-2001.owl#> .
+@prefix myext: <http://example.com/my-extensions> .
+@prefix ocrer: <http://purl.org/net/OCRe/research.owl#> .
+@prefix ospcu: <http://vivoweb.org/ontology/cu-vivo-osp#> .
+@prefix other: <http://ontovibe.visualdataweb.org/1.0/imported#> .
+@prefix paper: <http://www.icecoolfire.com#> .
+@prefix polbr: <http://ligadonospoliticos.com.br/politicobr/> .
+@prefix prism: <http://prismstandard.org/namespaces/1.2/basic/> .
+@prefix rfrws: <http://www.rws.nl/reference_frameworks/rf-rws.20131101.owl#> .
+@prefix sbmed: <http://vivo.stonybrookmedicine.edu/ontology/core#> .
+@prefix scirr: <http://vivoweb.org/ontology/scientific-research-resource#> .
+@prefix skos2: <http://www.w3.org/2008/05/skos#> .
+@prefix sqwrl: <http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#> .
+@prefix stars: <http://vitro.mannlib.cornell.edu/ns/cornell/stars/classes#> .
+@prefix story: <http://www.example.org/story.owl#> .
+@prefix sweet: <http://sweet.jpl.nasa.gov/2.3/sweetAll.owl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix tzont: <http://www.w3.org/2006/timezone#> .
+@prefix upper: <http://www.co-ode.org/roberts/upper.owl#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
+@prefix vivoc: <http://vivo.library.cornell.edu/ns/0.1#> .
+@prefix assert: <http://www.owl-ontologies.com/assert.owl#> .
+@prefix biblio: <http://purl.org/ontology/bibo/> .
+@prefix camera: <http://www.xfront.com/owl/ontologies/camera/#> .
+@prefix cbimfs: <http://www.coinsweb.nl/c-bim-fs.owl#> .
+@prefix clinic: <http://www.example.org/schemas/clinic/> .
+@prefix common: <http://www.loa-cnr.it/ontologies/CommonSenseMapping#> .
+@prefix config: <http://vitro.mannlib.cornell.edu/ns/vitro/ApplicationConfiguration#> .
+@prefix dcelem: <http://purl.org/dc/elements/1.1/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix ocresd: <http://purl.org/net/OCRe/study_design.owl#> .
+@prefix person: <http://models.okkam.org/ENS-core-vocabulary#> .
+@prefix plants: <http://www.linkeddatatools.com/plants#> .
+@prefix provdc: <http://www.w3.org/ns/prov-dc#> .
+@prefix pubmed: <http://vitro.mannlib.cornell.edu/ns/pubmed#> .
+@prefix rdfsyn: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schemas.talis.com/2005/address/schema#> .
+@prefix scires: <http://vivoweb.org/ontology/scientific-research#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix socsci: <http://vivo.library.cornell.edu/ns/vivo/socsci/0.1#> .
+@prefix sparql: <http://www.topbraidcomposer.org/owl/2006/09/sparql.owl#> .
+@prefix status: <http://purl.org/ontology/bibo/status/> .
+@prefix tbcgeo: <http://www.topbraidcomposer.org/owl/2006/07/tbcgeo.owl#> .
+@prefix travel: <http://www.co-ode.org/roberts/travel.owl#> .
+@prefix chdepcc: <http://homes.esat.kuleuven.be/~bioiuser/chdwiki/index.php/CHDEPCC:> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbpprop: <http://dbpedia.org/property/> .
+@prefix dcterms: <http://dublincore.org/2010/10/11/dcterms.rdf#> .
+@prefix degrees: <http://purl.org/ontology/bibo/degrees/> .
+@prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+@prefix dxpress: <http://ani.embl.de/4DXpress/reg/all/search/bquery.do?id=> .
+@prefix ensembl: <http://www.ensembl.org/Homo_sapiens/Gene/Summary?g=> .
+@prefix geo-gml: <http://www.opengis.net/def/dataType/OGC-GML/3.0/> .
+@prefix owl2xml: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix spatial: <http://vocab.arvida.de/2014/03/spatial/vocab#> .
+@prefix spinrdf: <http://spinrdf.org/sp#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix exergame: <http://www.fitforall.gr/ontology/exergame#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix owl_time: <http://www.w3.org/2006/time#> .
+@prefix rdfmoney: <http://www.purl.org/net/rdf-money/> .
+@prefix resource: <http://dbpedia.org/resource/> .
+@prefix timeline: <http://motools.sourceforge.net/timeline/timeline.html#> .
+@prefix genetests: <http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/> .
+@prefix marinetlo: <http://www.ics.forth.gr/isl/ontology/MarineTLO/> .
+@prefix wikipedia: <http://en.wikipedia.org/wiki/> .
+@prefix dspace-ont: <http://swig.hpclab.ceid.upatras.gr/dspace-ont/> .
+@prefix geospecies: <http://rdf.geospecies.org/ont/geospecies#> .
+@prefix literature: <http://www.ida.liu.se/~almhe/SecurityLiterature.owl#> .
+@prefix statistics: <http://purl.org/net/OCRe/statistics.owl#> .
+@prefix wn20schema: <http://www.w3.org/2006/03/wn/wn20/schema/> .
+@prefix ace_lexicon: <http://attempto.ifi.uzh.ch/ace_lexicon#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix generations: <http://www.owl-ontologies.com/generations.owl#> .
+@prefix genereviews: <http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/mim/> .
+@prefix geopolitical: <http://aims.fao.org/aos/geopolitical.owl#> .
+@prefix investopedia: <http://protege.stanford.edu/investopedia#> .
+@prefix iso11179-3e3: <http://constellation.jhuapl.edu/iso11179-3e3.owl#> .
+@prefix vitro-public: <http://vitro.mannlib.cornell.edu/ns/vitro/public#> .
+@prefix movieontology: <http://www.movieontology.org/2009/10/01/movieontology.owl#> .
+@prefix OWLSchemaPisco: <https://code.google.com/p/igc-pucp/source/browse/trunk/owl/OWLSchemaPisco.owl#> .
+@prefix family-example: <http://www.bryanesmith.com/ontologies/family-example.owl#> .
+@prefix family_example: <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#> .
+@prefix mobileprovider: <http://www.openvocabulary.info/ontologies/ecommerce/mobileprovider#> .
+@prefix movieontology2: <http://www.movieontology.org/2009/11/09/movieontology.owl#> .
+@prefix study_protocol: <http://purl.org/net/OCRe/study_protocol.owl#> .
+@prefix exergame-metric: <http://www.fitforall.gr/ontology/exergame-metric#> .
+@prefix exergame-exercise: <http://www.fitforall.gr/ontology/exergame-exercise#> .
+@prefix exergame-sitetype: <http://www.fitforall.gr/ontology/exergame-sitetype#> .
+@prefix untitled-ontology-8: <http://www.semanticweb.org/sparsha/ontologies/2014/10/untitled-ontology-8#> .
+@prefix untitled-ontology-19: <http://www.semanticweb.org/jkrammer/ontologies/2014/3/untitled-ontology-19#> .
+@prefix untitled-ontology-82: <http://www.semanticweb.org/marc/ontologies/2014/10/untitled-ontology-8#> .
+@prefix exergame-gamecontroller: <http://www.fitforall.gr/ontology/exergame-gamecontroller#> .
+@base <http://www.optet.eu/ns/DigitalTrustworthinessCertificate> .
+
+<http://www.optet.eu/ns/DigitalTrustworthinessCertificate> rdf:type owl:Ontology ;
+                                                           
+                                                           rdfs:label "Digital Trustworthiness Certificate Vocabulary" ;
+                                                           
+                                                           owl:versionInfo "0.3.0"^^xsd:string ;
+                                                           
+                                                           dcterms:created "2013-11-18"^^xsd:date ;
+                                                           
+                                                           dcterms:modified "2014-05-26"^^xsd:string ;
+                                                           
+                                                           dcterms:title "Digital Trustworthiness Certificate Vocabulary"^^xsd:string ;
+                                                           
+                                                           dcterms:creator "Francesco Di Cerbo"^^xsd:string ;
+                                                           
+                                                           dcterms:rights "SAP contribution in the EU-funded OPTET research project in Framework Programme 7 (FP7)."^^xsd:string ;
+                                                           
+                                                           rdfs:comment """This DTWC Vocabulary is a means to express Digital TrustWorthiness Certificate instances, as defined in the OPTET project (http://www.optet.eu). 
+The DTWC vocabulary aims at defining a content structure for asserting specific characteristics of a software, like those stated as outcome of certification processes. This vocabulary is deliberately agnostic with respect to any certification scheme, therefore it can potentially represent the results of any certification process, by extending it adequately."""^^xsd:string ;
+                                                           
+                                                           dcterms:description """This DTWC Vocabulary is a means to express Digital TrustWorthiness Certificate instances, as defined in the OPTET project (http://www.optet.eu). 
+The DTWC vocabulary aims at defining a content structure for asserting specific characteristics of a software, like those stated as outcome of certification processes. This vocabulary is deliberately agnostic with respect to any certification scheme, therefore it can potentially represent the results of any certification process, by extending it adequately.
+
+The DTWC is composed by four sections:
+- A Software Description (SD) that details the internals of software being certified. It comprises a list of internal components, their relations and a list of assets, i.e. the notable elements inside components, from which specific assessments and claims are made in the certificate.
+- A Trustworthiness Problem Definition [--TBC--].
+- A Trustworthiness Property Specification [--TBC--].
+- An Evidence section [--TBC--]."""^^xsd:string ;
+                                                           
+                                                           owl:versionIRI <http://www.optet.eu/ns/DigitalTrustworthinessCertificate/0.3.0> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasAsset
+
+:hasAsset rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasAssociatedStakeholder
+
+:hasAssociatedStakeholder rdf:type owl:ObjectProperty ;
+                          
+                          rdfs:domain [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasSubComponent ;
+                                        owl:someValuesFrom :Component
+                                      ] ;
+                          
+                          rdfs:range [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasSubComponent ;
+                                       owl:someValuesFrom :Stakeholder
+                                     ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasBehaviour
+
+:hasBehaviour rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasContext
+
+:hasContext rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasControl
+
+:hasControl rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasDependency
+
+:hasDependency rdf:type owl:ObjectProperty ;
+               
+               rdfs:comment "This relation allows for expressing dependencies as various levels. For instance, a Component can have certain dependencies with respect to the execution platform, or a TW Property for an Asset may require the existance of another TW Property in a dependent component (similarly to Security Objectives in Common Criteria)"^^xsd:string .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasEvidence
+
+:hasEvidence rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasMetric
+
+:hasMetric rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasMetricCalculationMethod
+
+:hasMetricCalculationMethod rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasPart
+
+:hasPart rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasStakeholder
+
+:hasStakeholder rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasSubComponent
+
+:hasSubComponent rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasSubComponent ;
+                              owl:someValuesFrom :Component
+                            ] ;
+                 
+                 rdfs:domain [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasSubComponent ;
+                               owl:someValuesFrom :ComponentModel
+                             ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasTWAttribute
+
+:hasTWAttribute rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasTWObjective
+
+:hasTWObjective rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :TWObjective ;
+                
+                rdfs:domain :TWProperty ;
+                
+                rdfs:subPropertyOf :hasDependency .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasTWProblemDefinition
+
+:hasTWProblemDefinition rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasTWProperty
+
+:hasTWProperty rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasTWPropertySpecification
+
+:hasTWPropertySpecification rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasThreat
+
+:hasThreat rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#influencesComponent
+
+:influencesComponent rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#type
+
+:type rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#usedBy
+
+:usedBy rdf:type owl:ObjectProperty ;
+        
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        
+        owl:equivalentProperty [ owl:inverseOf :hasDependency
+                               ] .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#ID
+
+:ID rdf:type owl:DatatypeProperty ;
+    
+    rdfs:range xsd:string .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasUnit
+
+:hasUnit rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#hasValue
+
+:hasValue rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#inTargetOfEvaluation
+
+:inTargetOfEvaluation rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:range xsd:boolean .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Asset
+
+:Asset rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :inTargetOfEvaluation ;
+                             owl:someValuesFrom xsd:boolean
+                           ] ;
+       
+       rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Attribute
+
+:Attribute rdf:type owl:Class .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Behaviour
+
+:Behaviour rdf:type owl:Class .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Component
+
+:Component rdf:type owl:Class ;
+           
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStakeholder ;
+                             owl:someValuesFrom owl:Thing
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasPart ;
+                             owl:someValuesFrom :ComponentModel
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :type ;
+                             owl:someValuesFrom owl:Thing
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasBehaviour ;
+                             owl:someValuesFrom :Behaviour
+                           ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#ComponentModel
+
+:ComponentModel rdf:type owl:Class ;
+                
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasPart ;
+                                  owl:someValuesFrom :Attribute
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSubComponent ;
+                                  owl:someValuesFrom :Component
+                                ] ;
+                
+                rdfs:comment """The ComponentModel can be used to define the structure and the internal dynamics of a Component. This node can be extended to comprise any piece of information deemed necessary, for instance, the Abstract Syntax Tree or a formal model for a Component.
+
+The hasPart relation can specify relevant elements like for instance variables or input parameters for which certain TW properties will be asserted.
+
+The hasSubComponent relation can be used to express an hierachy of Components."""@en .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Context
+
+:Context rdf:type owl:Class .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Control
+
+:Control rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :type ;
+                           owl:someValuesFrom owl:Thing
+                         ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#DTWC
+
+:DTWC rdf:type owl:Class ;
+      
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasPart ;
+                        owl:someValuesFrom :Evidence
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasPart ;
+                        owl:someValuesFrom :SystemDescription
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasTWPropertySpecification ;
+                        owl:someValuesFrom :TWPropertySpecification
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasTWProblemDefinition ;
+                        owl:someValuesFrom :TWProblemDefinition
+                      ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Evidence
+
+:Evidence rdf:type owl:Class ;
+          
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasContext ;
+                            owl:someValuesFrom :Metric
+                          ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Metric
+
+:Metric rdf:type owl:Class ;
+        
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPart ;
+                          owl:someValuesFrom :MetricRuntimeCalculation
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :type ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#MetricRuntimeCalculation
+
+:MetricRuntimeCalculation rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Stakeholder
+
+:Stakeholder rdf:type owl:Class ;
+             
+             rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#SubComponent
+
+:SubComponent rdf:type owl:Class ;
+              
+              rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#SystemDescription
+
+:SystemDescription rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasPart ;
+                                     owl:someValuesFrom :Component
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAsset ;
+                                     owl:someValuesFrom :Asset
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasStakeholder ;
+                                     owl:someValuesFrom :Stakeholder
+                                   ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#TWAttribute
+
+:TWAttribute rdf:type owl:Class ;
+             
+             rdfs:subClassOf owl:Thing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :type ;
+                               owl:someValuesFrom owl:Thing
+                             ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#TWObjective
+
+:TWObjective rdf:type owl:Class ;
+             
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :influencesComponent ;
+                               owl:someValuesFrom :Component
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasContext ;
+                               owl:someValuesFrom :Context
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasTWAttribute ;
+                               owl:someValuesFrom :TWAttribute
+                             ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#TWProblemDefinition
+
+:TWProblemDefinition rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencesComponent ;
+                                       owl:someValuesFrom :Component
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasThreat ;
+                                       owl:someValuesFrom :Threat
+                                     ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#TWProperty
+
+:TWProperty rdf:type owl:Class ;
+            
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasContext ;
+                              owl:someValuesFrom :Context
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasTWAttribute ;
+                              owl:someValuesFrom :TWAttribute
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAsset ;
+                              owl:someValuesFrom :Asset
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasEvidence ;
+                              owl:someValuesFrom :Evidence
+                            ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#TWPropertySpecification
+
+:TWPropertySpecification rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasControl ;
+                                           owl:someValuesFrom :Control
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasTWProperty ;
+                                           owl:someValuesFrom :TWProperty
+                                         ] .
+
+
+
+###  http://www.optet.eu/ns/DigitalTrustworthinessCertificate#Threat
+
+:Threat rdf:type owl:Class ;
+        
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasControl ;
+                          owl:someValuesFrom :Control
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :type ;
+                          owl:someValuesFrom owl:Thing
+                        ] .
+
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :ID ;
+                            owl:someValuesFrom xsd:string
+                          ] .
+
+
+
+###  http://xmlns.com/foaf/0.1/Person
+
+p1:Person rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Attribute
+                :Behaviour
+                :Component
+                :ComponentModel
+                :Context
+                :Control
+                :DTWC
+                :Evidence
+                :Metric
+                :MetricRuntimeCalculation
+                :Stakeholder
+                :SubComponent
+                :SystemDescription
+                :TWAttribute
+                :TWObjective
+                :TWProblemDefinition
+                :TWProperty
+                :TWPropertySpecification
+                :Threat
+                p1:Person
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net
